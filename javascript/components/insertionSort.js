@@ -9,10 +9,10 @@ export default function insertionSort(tab) {
         let j = i - 1 // j wskazuje na pierwszy element
 
         while (j >= 0 && tablica[j] > klucz) {
-            // Jeśli j jest mniesze lub równe zeru to znaczy że tablica ma mniej niż dwa elementy 
-            // Jeśli tablica[j] jest większa od klucza to znaczy 
+            // Jeśli j jest mniesze od zera to znaczy że koniec tablicy
+
             tablica[j + 1] = tablica[j]
-            j = j - 1
+            j--
 
             przejsciaPetli++
             iloscZamian++
