@@ -1,4 +1,4 @@
 export default function quickSort(tab) {
-    let copyTab = [...tab]
+    let tablica = [...tab] // kopia tablicy
     return copyTab
 }

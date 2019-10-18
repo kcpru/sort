@@ -11,24 +11,27 @@
         <script type="module">
             // import quickSort from './components/quickSort.js'
             import bubbleSort from './components/bubbleSort.js'
+            import insertionSort from './components/insertionSort.js'
 
             // const wielkoscTablicy = prompt('Wielkość tablicy:')
-            const wielkoscTablicy = 20
+            const wielkoscTablicy = 10
 
             let tab = []
-
+            
+            // Wypełnanie tablicy randomwymi liczbami
             for (let i = 0; i < wielkoscTablicy; i++) {
                 tab[i] = Math.round(Math.random() * 100)
             }
-            console.log(`Wielkość tablicy: ${wielkoscTablicy}
-Nieposortowana tablica: [${tab}]\n `)
-
-            const showTab = el => {}
-
-            console.log(bubbleSort(tab))
 
             const root = document.getElementById('root')
             root.innerText = tab
+            
+            console.log(`Wielkość tablicy: ${wielkoscTablicy}
+Nieposortowana tablica: [${tab}]\n `)
+
+            // Sortowanie 
+            console.log(bubbleSort(tab))
+            console.log(insertionSort(tab))
         </script>
     </body>
 </html>
