@@ -1,11 +1,17 @@
- Volume in drive C is Windows8_OS
- Volume Serial Number is 5881-BE2B
-
- Directory of C:\Users\kacpe.DESKTOP-0CG0B39\Desktop\sort
-
-18.10.2019  18:02    <DIR>          .
-18.10.2019  18:02    <DIR>          ..
-18.10.2019  18:02                 0 .eslintrc.json
-18.10.2019  18:02               218 package.json
-               2 File(s)            218 bytes
-               2 Dir(s)  607ÿ460ÿ777ÿ984 bytes free
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "extends": "eslint:recommended",
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "rules": {
+    }
+}
