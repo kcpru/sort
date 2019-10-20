@@ -1,31 +1,24 @@
 export default function insertionSort(tab) {
     let tablica = [...tab] // Kopia tablicy
     let n = tablica.length,
-        iloscZamian = 0,
-        przejsciaPetli = 0
+        porownania = 0
 
     for (let i = 1; i < n; i++) {
-        let klucz = tablica[i] // Ustawiamy klucz na drugi element tablicy
-        let j = i - 1 // j wskazuje na pierwszy element
+        let klucz = tablica[i]
+        let j = i - 1
 
         while (j >= 0 && tablica[j] > klucz) {
-            // Jeśli j jest mniesze od zera to znaczy że koniec tablicy
+            porownania++
 
             tablica[j + 1] = tablica[j]
             j--
-
-            przejsciaPetli++
-            iloscZamian++
         }
         j++
         tablica[j] = klucz
-
-        przejsciaPetli++
     }
 
     return `----- INSERTION SORT ----- ( Sortowanie przez wstawianie )
-Ilość zamian: ${iloscZamian},
-Przejścia pętli: ${przejsciaPetli},
+Porównania: ${porownania++},
 Posortowana tablica: [${tablica}]`
 }
 

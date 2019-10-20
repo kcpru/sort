@@ -1,31 +1,23 @@
-export default function selectSort(tab) {
+export default function selectionSort(tab) {
     let tablica = [...tab] // Kopia tablicy
     let n = tablica.length,
-        iloscZamian = 0,
-        przejsciaPetli = 0
+        porownania = 0
 
     for (let i = 0; i < n - 1; i++) {
-        let min = 0
-
-        for (let j = i+1; j < n; j++) {
+        let min = i
+        for (let j = i + 1; j < n; j++) {
+            porownania++
             if (tablica[j] < tablica[min]) {
                 min = j
-                console.log(tablica[min])
             }
-            przejsciaPetli++
         }
-        if (min != i) {
-            console.log(`swap: ${tablica[i]} ${tablica[min]}`)
-            ;[tablica[i], tablica[min]] = [tablica[min], tablica[i]]
-            console.log(tablica)
-        }
-        iloscZamian++
-        przejsciaPetli++
+        porownania++
+        if (tablica[min] < tablica[i])
+            [tablica[i], tablica[min]] = [tablica[min], tablica[i]]
     }
 
-    return `----- SELECT SORT ----- ( Sortowanie przez wstawianie )
-Ilość zamian: ${iloscZamian},
-Przejścia pętli: ${przejsciaPetli},
+    return `----- SELECTION SORT ----- ( Sortowanie przez wstawianie )
+Porówniania: ${porownania},
 Posortowana tablica: [${tablica}]`
 }
 
