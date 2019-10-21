@@ -2,11 +2,9 @@ import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import github from "react-syntax-highlighter/dist/cjs/styles/hljs/github";
 
-const javascriptCode = `export default function bubbleSort(tab) {
+const javascriptCode = `function bubbleSort(tab) {
   let tablica = [...tab], // Kopia tablicy
-    n = tablica.length,
-    iloscZamian = 0,
-    przejsciaPetli = 0
+    n = tablica.length
 
   while (n > 1) {
     for (let i = 0; i < n - 1; i++) {

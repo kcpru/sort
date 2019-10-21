@@ -10,6 +10,7 @@ import InsertionSortView from "./pages/insertionSort";
 import SelectionSortView from "./pages/selectionSort";
 import MergeSortView from "./pages/mergeSort";
 import QuickSortView from "./pages/quickSort";
+import HomeView from "./pages/home";
 
 export default class App extends Component {
   render() {
@@ -72,15 +73,11 @@ export default class App extends Component {
               <QuickSortView />
             </Route>
             <Route path="/">
-              <Home />
+              <HomeView />
             </Route>
           </Switch>
         </main>
       </Router>
     );
   }
-}
-
-function Home() {
-  return <h2>Home</h2>;
 }
