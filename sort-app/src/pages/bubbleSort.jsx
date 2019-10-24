@@ -8,9 +8,8 @@ const javascriptCode = `function bubbleSort(tab) {
 
   while (n > 1) {
     for (let i = 0; i < n - 1; i++) {
-      if (tablica[i] > tablica[i + 1]) {
-        [tablica[i], tablica[i + 1]] = [tablica[i + 1], tablica[i]] // Zamiana miejscami
-      }
+      if (tablica[i] > tablica[i + 1])
+        ;[tablica[i], tablica[i + 1]] = [tablica[i + 1], tablica[i]] // Zamiana miejscami
     }
     n--
   }
@@ -60,7 +59,7 @@ export default function BubbleSortView() {
         <div className="card col m-3">
           <div className="card-body">
             <h5 className="card-title">Implementacja w JavaScript</h5>
-            <h6 className="card-subtitle mb-2 text-muted">JavaScript</h6>
+            <h6 className="card-subtitle mb-2 text-muted">ECMAScript 6</h6>
             <p className="card-text">
               <SyntaxHighlighter language="javascript" style={github}>
                 {javascriptCode}
