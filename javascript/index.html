@@ -1,39 +1,59 @@
 <!DOCTYPE html>
 <html lang="pl">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Sort</title>
-    </head>
-    <body>
-        <div id="root"></div>
-        <script type="module">
-            // import quickSort from './components/quickSort.js'
-            import bubbleSort from './components/bubbleSort.js'
-            import insertionSort from './components/insertionSort.js'
-            import selectionSort from './components/selectionSort.js'
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Sort</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module">
+      import searchBinaryValue from "./components/binarySearch.js";
+      import quickSortValue from "./components/quickSort.js";
+      import bubbleSortValue from "./components/bubbleSort.js";
+      import insertionSortValue, {
+        insertionSort,
+      } from "./components/insertionSort.js";
+      import selectionSortValue from "./components/selectionSort.js";
 
-            // const wielkoscTablicy = prompt('Wielkość tablicy:')
-            const wielkoscTablicy = 10
+      // const wielkoscTablicy = prompt('Wielkość tablicy:')
+      const wielkoscTablicy = 10;
 
-            let tab = []
-            
-            // Wypełnanie tablicy randomwymi liczbami
-            for (let i = 0; i < wielkoscTablicy; i++) {
-                tab[i] = Math.round(Math.random() * 100)
-            }
+      let tab = [];
 
-            const root = document.getElementById('root')
-            root.innerText = tab
-            
-            console.log(`Wielkość tablicy: ${wielkoscTablicy}
-Nieposortowana tablica: [${tab}]\n `)
+      // Wypełnanie tablicy randomwymi liczbami
+      for (let i = 0; i < wielkoscTablicy; i++) {
+        tab[i] = Math.round(Math.random() * 100);
+      }
 
-            // Sortowanie 
-            console.log(bubbleSort(tab))
-            console.log(insertionSort(tab))
-            console.log(selectionSort(tab))
-        </script>
-    </body>
+      const root = document.getElementById("root");
+      root.innerText = tab;
+
+      console.log(
+        `%cWielkość tablicy: ${wielkoscTablicy}
+Nieposortowana tablica: [${tab}]\n `,
+        "font-weight: bold;"
+      );
+
+      // Sortowanie
+      console.log(bubbleSortValue(tab));
+      console.log(insertionSortValue(tab));
+      console.log(selectionSortValue(tab));
+
+      console.log(`
+--------------------------------------
+
+ZIELONY KOLOR === ZNALEZIONO
+
+(Odświeżaj stronę aby zobaczyć efekt)
+
+`);
+      const sortTab = [...insertionSort(tab)];
+      searchBinaryValue(sortTab, 0, sortTab.length, 65);
+      searchBinaryValue(sortTab, 0, sortTab.length, 4);
+      searchBinaryValue(sortTab, 0, sortTab.length, 88);
+      searchBinaryValue(sortTab, 0, sortTab.length, 56);
+    </script>
+  </body>
 </html>
