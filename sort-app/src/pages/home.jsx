@@ -37,6 +37,15 @@ const linksWebsite = [
       "Algorytmy sortowania, zarówno te proste jak i bardziej zaawansowane i wydajne, scalanie ciągów, ...",
   },
   {
+    title: "Programowanie i algorytmy",
+    href: "http://algorytm.edu.pl/",
+    content: `Serwis został podzielony na kilka kategorii:
+Programowanie w C++ - kurs języka C++,
+Zadania - zadania z rozwiązaniami podzielone tematycznie,
+Ćwiczenia - ćwiczenia do samodzielnego rozwiązania. Niektóre z nich można testować na automatycznej sprawdzarce,
+Matura - zadania programistyczne przygotowujące do matury oraz arkusze maturalne z informatyki`,
+  },
+  {
     title: "Khan Academy - Algorytmy",
     href: "https://pl.khanacademy.org/computing/computer-science/algorithms",
     content:

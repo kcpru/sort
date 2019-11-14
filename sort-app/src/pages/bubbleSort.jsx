@@ -68,32 +68,20 @@ export default function BubbleSortView() {
           </div>
         </div>
       </div>
+
+      <div className="row">
+        <div className="card col m-3">
+          <div className="card-body">
+            <h5 className="card-title">Gif'y</h5>
+            <p className="card-text">
+              <img
+                src="https://media.giphy.com/media/fdFQlt5A45jyw/giphy.gif"
+                alt="Gif obrazujący działanie sortowania bąbelkowego"
+              />
+            </p>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
-
-// export default function bubbleSort(tab) {
-//     let tablica = [...tab], // Kopia tablicy
-//         n = tablica.length,
-//         iloscZamian = 0,
-//         przejsciaPetli = 0
-
-//     while (n > 1) {
-//         for (let i = 0; i < n - 1; i++) {
-//             if (tablica[i] > tablica[i + 1]) {
-//                 [tablica[i], tablica[i + 1]] = [tablica[i + 1], tablica[i]] // Zamiana miejscami
-
-//                 iloscZamian++
-//             }
-//             przejsciaPetli++
-//         }
-//         n--
-
-//         przejsciaPetli++
-//     }
-
-//     return `----- BUBBLE SORT ----- ( Sortowanie bąbelkowe )
-// Ilość zamian: ${iloscZamian},
-// Przejścia pętli: ${przejsciaPetli},
-// Posortowana tablica: [${tablica}]`
-// }
