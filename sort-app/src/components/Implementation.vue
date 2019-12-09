@@ -29,6 +29,7 @@
 <script>
 // import hljs from "highlight.js";
 import Highlight from "vue-highlight-component";
+import "highlight.js/styles/dracula.css";
 
 export default {
   name: "Implementation",
@@ -50,5 +51,10 @@ export default {
 code {
   width: 100%;
   box-shadow: none;
+}
+
+.hljs {
+  background: #303030;
+  color: #f8f8f2;
 }
 </style>

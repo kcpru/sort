@@ -8,8 +8,8 @@
     <v-spacer></v-spacer>
     <div class="d-none d-lg-block">
       <v-btn v-for="item in navItems" :key="item.title" :to="item.to" text>
-        <span class="mr-2">{{item.title}}</span>
-        <v-icon>{{item.icon}}</v-icon>
+        <span class="mr-2">{{ item.title }}</span>
+        <v-icon>{{ item.icon }}</v-icon>
       </v-btn>
     </div>
 
@@ -18,9 +18,13 @@
         <v-app-bar-nav-icon class="d-lg-none" v-on="on"></v-app-bar-nav-icon>
       </template>
       <v-list>
-        <v-list-item v-for="item in navItems" :key="item.title" :href="'#'+item.to">
+        <v-list-item
+          v-for="item in navItems"
+          :key="item.title"
+          :href="'#' + item.to"
+        >
           <v-list-item-icon>
-            <v-icon>{{item.icon}}</v-icon>
+            <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon>
           <v-list-item-title>{{ item.title }}</v-list-item-title>
         </v-list-item>
@@ -73,4 +77,3 @@ export default {
   })
 };
 </script>
-

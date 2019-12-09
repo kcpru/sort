@@ -1,8 +1,8 @@
 {
   "name": "sort-app",
-  "author": "Kacper Ślusarczyk",
   "version": "0.1.0",
   "private": true,
+  "author": "Kacper Ślusarczyk",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -19,10 +19,10 @@
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.1.0",
-    "@vue/cli-plugin-eslint": "^4.1.0",
+    "@vue/cli-plugin-eslint": "^4.1.1",
     "@vue/cli-plugin-pwa": "^4.1.0",
     "@vue/cli-plugin-router": "^4.1.0",
-    "@vue/cli-service": "^4.1.0",
+    "@vue/cli-service": "^4.1.1",
     "@vue/eslint-config-prettier": "^5.0.0",
     "babel-eslint": "^10.0.3",
     "eslint": "^5.16.0",

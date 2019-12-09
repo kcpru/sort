@@ -38,8 +38,25 @@ export default {
       {
         title: "Opis",
         subtitle: "",
-        flex: 6,
-        content: ""
+        flex: 12,
+        content: `W algorytmie sortowania przez scalanie jest wykorzystywana strategia "dziel i zwyciężaj". Jest to bardzo efektywna technika algorytmiczna (wykorzystana jest także w algorytmie sortowania "szybkiego").</br>
+
+Wyobraźmy sobie, że mamy dwa uporządkowane ciągi, a chcemy utworzyć z nich jeden – także uporządkowany. Można oczywiście potraktować je jako jeden ciąg i posortować jedną ze znanych metod, ale nie zostanie wykorzystane uporządkowanie obu ciągów. Warto zastosować następujący sposób:</br>
+
+1. Porównujemy ze sobą pierwsze elementy z każdego z ciągów danych.</br>
+2. Mniejszy element wstawiamy do nowego ciągu i usuwamy z ciągu danych.</br>
+3. Powtarzamy te czynności, aż oba ciągi danych będą puste.</br></br>
+W ten sposób, w nowo utworzonym ciągu wszystkie elementy są uporządkowane, a co najważniejsze operacja ta wymaga wykonania niewielu porównań.
+Wiadomo już, jak z dwóch uporządkowanych ciągów otrzymać jeden. Wykorzystując to, można sformułować algorytm sortowania dowolnego ciągu:</br>
+
+1. Podziel ciąg na dwie równe części (jeśli ciąg ma nieparzystą liczbę elementów, jedna z części będzie miała o jeden element więcej).</br>
+2. Każdą z części uporządkuj.</br>
+3. Połącz dwa uporządkowane ciągi w jeden ciąg uporządkowany.</br></br>
+Pozostaje jeszcze rozstrzygnąć, w jaki sposób posortować każdy z dwóch podciągów? W odpowiedzi zawiera się cała siła tego algorytmu: w ten sam sposób! Po prostu wywołujemy rekurencyjnie ten sam algorytm dla każdego z podciągów. Aby takie postępowanie nie przebiegało w nieskończoność należy określić, kiedy zaprzestajemy podziału ciągu. Następuje to, gdy sortowany ciąg ma mniej niż dwa elementy. Ostatecznie algorytm ma następującą postać:
+Jeśli ciąg zawiera więcej niż jeden element, to podziel go na dwie równe części (lub prawie równe, jeśli ciąg ma nieparzystą liczbę elementów).
+Posortuj pierwszą część stosując ten sam algorytm.
+Posortuj drugą część stosując ten sam algorytm.
+Połącz dwa uporządkowane ciągi w jeden ciąg uporządkowany.`
       }
     ],
     implement: [
@@ -112,6 +129,79 @@ int main()
     print(t, n);
     return 0;
 }`
+      },
+      {
+        lang: "python",
+        code: `def merge(arr, l, m, r): 
+    n1 = m - l + 1
+    n2 = r- m 
+  
+    # create temp arrays 
+    L = [0] * (n1) 
+    R = [0] * (n2) 
+  
+    # Copy data to temp arrays L[] and R[] 
+    for i in range(0 , n1): 
+        L[i] = arr[l + i] 
+  
+    for j in range(0 , n2): 
+        R[j] = arr[m + 1 + j] 
+  
+    # Merge the temp arrays back into arr[l..r] 
+    i = 0     # Initial index of first subarray 
+    j = 0     # Initial index of second subarray 
+    k = l     # Initial index of merged subarray 
+  
+    while i < n1 and j < n2 : 
+        if L[i] <= R[j]: 
+            arr[k] = L[i] 
+            i += 1
+        else: 
+            arr[k] = R[j] 
+            j += 1
+        k += 1
+  
+    # Copy the remaining elements of L[], if there 
+    # are any 
+    while i < n1: 
+        arr[k] = L[i] 
+        i += 1
+        k += 1
+  
+    # Copy the remaining elements of R[], if there 
+    # are any 
+    while j < n2: 
+        arr[k] = R[j] 
+        j += 1
+        k += 1
+  
+# l is for left index and r is right index of the 
+# sub-array of arr to be sorted 
+def mergeSort(arr,l,r): 
+    if l < r: 
+  
+        # Same as (l+r)/2, but avoids overflow for 
+        # large l and h 
+        m = (l+(r-1))/2
+  
+        # Sort first and second halves 
+        mergeSort(arr, l, m) 
+        mergeSort(arr, m+1, r) 
+        merge(arr, l, m, r) 
+  
+  
+# Driver code to test above 
+arr = [12, 11, 13, 5, 6, 7] 
+n = len(arr) 
+print ("Given array is") 
+for i in range(n): 
+    print ("%d" %arr[i]), 
+  
+mergeSort(arr,0,n-1) 
+print ("Sorted array is") 
+for i in range(n): 
+    print ("%d" %arr[i]), 
+  `
       }
     ],
     images: [

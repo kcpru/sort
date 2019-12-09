@@ -98,7 +98,7 @@ int main()
       },
       {
         lang: "python",
-        code: `def selectionSort:
+        code: `def selectionSort():
   print('Hello world')`
       }
     ]
